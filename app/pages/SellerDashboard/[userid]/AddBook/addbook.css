@@ -1,0 +1,127 @@
+.belowdash{
+    display: flex;
+    gap: 20px;
+}
+
+.addbook-tempconta{
+    background-color: #f6f6f6;
+    height: 1350px;
+    width: max-content;
+    border-radius: 40px;
+    justify-content: center;
+    align-items: center;
+}
+
+.imagecontainerr {
+    background-color: #D9D9D9;
+    height: 300px;
+    width: 1025px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 30px;
+    border-radius: 35px;
+    overflow: hidden;
+    position: relative;
+}
+
+.uploadimg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.image-preview {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+    max-height: 250px;
+    padding: 10px;
+}
+
+.image-preview img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.form-fields{
+
+    display: flex;
+    gap: 50px;
+    margin: 30px;
+
+}
+
+.form-fields label{
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-left: 40px;
+}
+
+.form-fields input{
+    height: 10px;
+    width: 450px;
+    border: none;
+    border-radius: 45px;
+    background-color: #D9D9D9;
+    margin-bottom: 10px;
+    color: black;
+    padding: 20px;
+}
+
+.form-fields select{
+    height: 50px;
+    width: 495px;
+    border: none;
+    border-radius: 45px;
+    background-color: #D9D9D9;
+    margin-bottom: 10px;
+    color: black;
+    padding: 20px;
+}
+
+.form-fields textarea{
+    height: 200px;
+    width: 450px;
+    border: none;
+    border-radius: 30px;
+    background-color: #D9D9D9;
+    margin-bottom: 10px;
+    color: black;
+    padding: 20px;
+}
+
+.textform{
+    gap: 100px;
+}
+
+.submitbutton button{
+    all: unset;
+    padding: 20px;
+    padding-left: 35px;
+    padding-right: 35px;
+    background-color: #F4AD0F;
+    border-radius: 45px;
+    color: white;
+    font-weight: bold;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.form-fields button:hover{
+    background-color: #643887;
+}

@@ -1,0 +1,61 @@
+.AllReviewsContainer {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    overflow-y: hidden;
+    gap: 20px;
+    scroll-behavior: smooth;
+    padding: 10px 20px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+
+  }
+  
+  /* Optional scrollbar styling */
+  .AllReviewsContainer::-webkit-scrollbar {
+    height: 8px;
+  }
+  .AllReviewsContainer::-webkit-scrollbar-thumb {
+    background: #aaa;
+    border-radius: 6px;
+  }
+  .AllReviewsContainer::-webkit-scrollbar-track {
+    background: #eee;
+  }
+  
+  
+  .Review {
+    flex: 0 0 auto;
+    min-width: 250px;
+    max-width: 250px;
+    width: 250px;
+  }
+ 
+    
+.booksboxsection{
+    display: flex;
+    gap: 30px;
+}
+
+.reviewheading{
+    display: flex;
+    gap: 20px;
+}
+
+.reviewheading button{
+    all: unset;
+    cursor: pointer;
+    color: #643887;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.reviewheading button:hover{
+    font-size: 18px;
+}
+
+.reviewheading .name{
+    display: flex;
+    gap: 20px;
+}

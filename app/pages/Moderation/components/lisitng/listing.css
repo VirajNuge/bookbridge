@@ -1,0 +1,111 @@
+.allcontainer{
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    height: 230px;
+    background-color: #F6F6F6;
+    border-radius: 35px;
+    padding: 40px;
+    margin-bottom: 30px;
+    border: 2px solid #643887;
+}
+
+.allcontainer img{
+    background-color: white;
+    height: 250px;
+    width: 250px;
+    border-radius: 35px;
+}
+
+.allcontainer h2{
+    font-family: "Monument Black";
+    font-size: 25px;
+    margin-bottom: -15px;
+}
+
+.allcontainer h3{
+    font-size: 15px;
+    margin-bottom: -15px;
+}
+
+.allcontainer p{
+    font-family: "Monument Black";
+    color: #F4AD0F;
+    font-size: 20px;
+    margin-bottom: 0px;
+}
+
+.sellerbutton{
+    all: unset;
+    padding: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    background-color: #643887;
+    color: white;
+    border-radius: 90px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    transition: 0.3s;
+}
+
+.checkbutton{
+    all: unset;
+    transition: 0.3s;
+    padding: 10px;
+    padding-left: 30px;
+    padding-right:30px;
+    background-color: #F4AD0F;
+    color: white;
+    border-radius: 90px;
+    cursor: pointer;
+}
+
+.sellerbutton:hover{
+    background-color: #3e2057;
+}
+
+.checkbutton:hover{
+    background-color: #c2880a;
+}
+
+.approvebuttons {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    
+}
+
+.approvebuttons button{
+    all: unset;
+    padding: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+    background-color: white;
+    border-radius: 45px;
+    cursor: pointer;
+    transition: 0.3s;
+    color: white;
+    font-size: 30px;
+}
+
+.approvebuttons .right{
+    background-color:#00FF37;   
+}
+
+.approvebuttons .wrong{
+    background-color:#FF0000;
+}
+
+.approvebuttons .right:hover{
+    background-color:#04c82e;
+}
+
+.approvebuttons .wrong:hover{
+    background-color:#be0202;
+}
+
+.buttons{
+    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+}

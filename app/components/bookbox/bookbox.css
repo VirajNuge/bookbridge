@@ -1,0 +1,73 @@
+.BookContainer{
+    background-color: #643887;
+    height: 590px;
+    width: 289px;
+    border-radius: 20px;
+    justify-content: center;
+    justify-items: center;
+    margin: 0px;
+    padding: 0px;
+    
+
+}
+
+.imageBox{
+    padding-top: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+}
+
+.BookContainer img{
+    height: 365px;
+    width: 236px;
+    border-radius: 20px;
+}
+
+.BookContainer h1 {
+    font-family: "Monument Extended Regular";
+    font-size: 19px;
+    color: white;
+    padding-left: 30px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Limits to 2 lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-height: 2.8em; /* Adjust based on line height */
+    line-height: 1.4em; /* Controls line spacing */
+    max-width: 13.1em;
+    word-break: break-word;
+}
+
+
+.BookContainer p{
+
+    font-family: "Monument Black";
+    justify-self: left;
+    color: #F4AD0F;
+    font-size: 24px;
+    padding-left: 30px;
+    margin-top: -7px;
+    margin-bottom: 7px;
+}
+
+.BookContainer button{
+    all:unset;
+    font-weight: bold;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #F4AD0F;
+    padding-left: 25px;
+    padding-right: 25px;
+    border-radius: 90px;
+    color: white;
+    transition: 0.3s;
+    cursor: pointer;
+
+}
+
+.BookContainer button:hover{
+    background-color: white;
+    color: black;
+} 

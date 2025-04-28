@@ -1,0 +1,131 @@
+/*.reviewContainer{
+    background-color: #643887;
+    height: 255px;
+    width: 468px;
+    border-radius: 28px;
+    padding: 20px;
+    margin: 0px;
+}
+
+
+
+.reviewContainer .reviewText p, h3, h6{
+    color: white;
+    line-height: 18px;
+}
+
+.reviewContainer .Stars{
+    color: #F4AD0F;
+    font-size: 30px;
+    margin-top: 0px;
+}
+.reviewContainer .reviewText p{
+    margin-top: -20px;
+    display: -webkit-box;
+    -webkit-line-clamp: 5; 
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  
+}
+
+.reviewContainer .reviewText h3{
+    margin-top: 0px;
+}
+
+.reviewContainer .reviewText h6{
+    margin-top: -20px;
+}
+*/
+.reviewContainer{
+    background-color: #643887;
+    height: 250px;
+    width: 368px;
+    border-radius: 28px;
+    padding: 20px;
+    margin: 0px;
+}
+
+
+
+.reviewContainer .reviewText p{
+    color: white;
+    line-height: 18px;
+        overflow: visible;        
+        text-overflow: unset;   
+        white-space: normal;    
+        display: block;           
+        word-wrap: break-word;    
+}
+
+.reviewContainer .reviewText h3{
+    color: white;
+    line-height: 18px;
+}
+.reviewContainer .reviewText h6{
+    color: white;
+    line-height: 18px;
+}
+
+.reviewContainer .Stars{
+    color: #F4AD0F;
+    font-size: 30px;
+    margin-top: -10px;
+}
+.reviewContainer .reviewText p{
+    margin-top: -20px;
+    display: -webkit-box;
+    -webkit-line-clamp: 5; /* Limit to 3 lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  
+}
+
+.reviewContainer .reviewText h3{
+    margin-top: 0px;
+}
+
+.reviewContainer .reviewText h6{
+    margin-top: -20px;
+}
+
+
+@media (min-width: 1025px) and (max-width: 1440px) {
+    .reviewContainer{
+        background-color: #643887;
+        height: 250px;
+        width: 368px;
+        border-radius: 28px;
+        padding: 20px;
+        margin: 0px;
+    }
+    
+    
+    
+    .reviewContainer .reviewText p, h3, h6{
+        color: white;
+        line-height: 18px;
+    }
+    
+    .reviewContainer .Stars{
+        color: #F4AD0F;
+        font-size: 30px;
+        margin-top: -10px;
+    }
+    .reviewContainer .reviewText p{
+        margin-top: -20px;
+        display: -webkit-box;
+        -webkit-line-clamp: 5; /* Limit to 3 lines */
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      
+    }
+    
+    .reviewContainer .reviewText h3{
+        margin-top: 0px;
+    }
+    
+    .reviewContainer .reviewText h6{
+        margin-top: -20px;
+    }
+    
+}

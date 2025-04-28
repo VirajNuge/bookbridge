@@ -1,0 +1,171 @@
+.bookscontainer{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.fliteroptions{
+    height: 600px;
+    width: 350px;
+    border-radius: 20px;
+    background-color: #643887;
+    margin-left: 25px;
+    display: block;
+    padding: 30px;
+    align-items: center;
+    justify-content: center;
+    
+   
+}
+
+.fliteroptions select{
+    margin-bottom: 20px;
+    padding: 20px;
+    width: 340px;
+    border-radius: 45px;
+    border: none;
+}
+
+.browsepagecontainer{
+    display: flex;
+    gap:50px;
+}
+
+.fliteroptions label{
+    font-family: "Monument Regular";
+    color: white;
+    margin-left: 50px;
+
+}
+
+.fliteroptions input{
+    margin-bottom: 20px;
+    padding: 20px;
+    width: 300px;
+    border-radius: 45px;
+    border: none;
+}
+
+.fliteroptions button{
+    all: unset;
+    padding: 20px;
+    background-color: white;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.fliteroptions button:hover{
+    background-color: whitesmoke;
+    font-weight: bold;
+}
+
+.searchcontainer{
+    height: 100px;
+    width: 1375px;
+    border-radius: 15px;
+    background-color: #643887;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.searchbar {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin: 1rem;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .searchbar input {
+    padding: 12px 12px;
+    width: 250px;
+    border: 1px solid #ccc;
+    border-radius: 45px;
+    font-size: 14px;
+  }
+
+  .searchbar select {
+    padding: 12px 12px;
+    width: 250px;
+    border: 1px solid #ccc;
+    border-radius: 45px;
+    font-size: 14px;
+  }
+  
+  .searchbar button {
+    padding: 12px 16px;
+    background-color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  .searchbar button:hover {
+    background-color: #4a1f6f;
+  }
+  
+
+@media (min-width: 1025px) and (max-width: 1440px) {
+
+    .fliteroptions{
+        height: 550px;
+        width: 350px;
+        border-radius: 20px;
+        background-color: #643887;
+        margin-left: 20px;
+        display: block;
+        padding: 30px;
+        align-items: center;
+        justify-content: center;
+        
+       
+    }
+    
+    .fliteroptions select{
+        margin-bottom: 20px;
+        padding: 20px;
+        width: 340px;
+        border-radius: 45px;
+        border: none;
+    }
+    
+    .browsepagecontainer{
+        display: flex;
+        gap:50px;
+    }
+    
+    .fliteroptions label{
+        font-family: "Monument Regular";
+        color: white;
+        margin-left: 50px;
+    
+    }
+    
+    .fliteroptions input{
+        margin-bottom: 20px;
+        padding: 20px;
+        width: 300px;
+        border-radius: 45px;
+        border: none;
+    }
+    
+    .fliteroptions button{
+        all: unset;
+        padding: 20px;
+        background-color: white;
+        border-radius: 20px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+    
+    .fliteroptions button:hover{
+        background-color: whitesmoke;
+        font-weight: bold;
+    }
+
+}

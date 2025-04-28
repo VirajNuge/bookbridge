@@ -1,0 +1,57 @@
+
+.sellerpagetopcontainer{
+    display: flex;
+    align-items: center;
+    
+}
+
+.sellerpagetopcontainer .sellerimage{
+    height: 320px;
+    width: 320px;
+    border-radius: 360px;
+}
+
+.sellerheader{
+    display: flex;
+    align-items: center;
+    margin-bottom: -80px;
+}
+
+.sellerheader img{
+    height: 20px;
+}
+
+.sellerheader h3{
+    color: black;
+    margin-right: 10px;
+    font-size: 36px;
+}
+
+.sellername{
+    font-family: "Monument Regular";
+    font-size: 64px;
+    margin-bottom: -10px;
+}
+
+.sellerpoint h5{
+    margin-bottom: -20px;
+    color: #643887;
+    font-weight: bold;
+}
+
+.infocontainer{
+    display: flex;
+    gap: 100px;
+}
+
+.sellerallinfo{
+    margin-left: 50px;
+}
+
+.sellerpagetopcontainer{
+    padding: 30px;
+    border: 2px solid #643887;
+    border-radius: 35px;
+    align-items: center;
+    justify-content: center;
+}

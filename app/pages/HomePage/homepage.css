@@ -1,0 +1,427 @@
+.hero1 img {
+    width: 700px;
+}
+
+.HeroSection {
+    display: flex;
+}
+
+.herotop {
+    background-color: #643887;
+    height: 300px;
+    width: 670px;
+    border-radius: 35px;
+    margin-left: 60px;
+    margin-top: 50px;
+    align-content: center;
+    line-height: 20px;
+    color: white;
+}
+
+.herotop h1, h2 {
+    font-family: "Monument Extended Regular";
+}
+
+.herotop h1 {
+    font-size: 50px;
+}
+
+.herotop h2 {
+    font-size: 30px;
+}
+
+.herobottom {
+    background-color: #F4AD0F;
+    height: 300px;
+    width: 670px;
+    border-radius: 35px;
+    margin-left: 60px;
+    margin-top: 20px;
+    align-content: center;
+}
+
+.herobottom h1 {
+    font-size: 75px;
+    font-family: "Monument Extended Regular";
+    color: #643887;
+    padding-left: 40px;
+}
+
+.herobottom button {
+    all: unset;
+    font-size: 15px;
+    background-color: white;
+    padding: 20px 40px;
+    border-radius: 90px;
+    font-weight: bold;
+    position: absolute;
+    bottom: 70px;
+    right: 100px;
+    transition: 0.3s;
+}
+
+.herobottom button:hover {
+    background-color: #643887;
+    color: white;
+    cursor: pointer;
+}
+
+.CateLine {
+    display: flex;
+    overflow-x: auto;       /* enables horizontal scrolling */
+    gap: 16px;              /* spacing between category boxes */
+    padding: 10px 0;        /* optional: vertical padding */
+    scroll-behavior: smooth;
+  }
+  
+  /* Optional: hide scrollbar (still scrollable) */
+  .CateLine::-webkit-scrollbar {
+    height: 8px;
+  }
+  .CateLine::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+  }
+  
+  
+
+.CategorySection {
+    font-family: "Monument Extended Regular";
+}
+
+.ChooseUsSection {
+    margin-top: 40px;
+    width: 1425px;
+    height: 641px;
+    border: 3px dashed #643887;
+    border-radius: 35px;
+    display: flex;
+}
+
+.ChooseUsSection img {
+    margin-left: 25px;
+    margin-top: -60px;
+}
+
+.point {
+    display: flex;
+}
+
+.pointcircle img {
+    height: 50px;
+}
+
+.point img {
+    height: 50px;
+    margin-top: 8px;
+    background-color: #643887;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.point .pointtext {
+    padding-left: 25px;
+    line-height: 5px;
+}
+
+.choosepointss {
+    margin-left: 50px;
+    margin-top: 0px;
+}
+
+.chooseinfo h1 {
+    font-family: "Monument Extended Regular";
+    padding-top: 40px;
+}
+
+.section3 {
+    display: block;
+}
+
+.SectionSmall {
+    width: 1345px;
+    height: 341px;
+    border: 3px dashed #643887;
+    border-radius: 35px;
+    display: flex;
+    margin-left: 0px;
+    margin-top: 40px;
+}
+
+.section4info .informationbox {
+    display: flex;
+}
+
+.text-purple {
+    color: #643887;
+}
+
+.text-yellow {
+    color: #F4AD0F;
+}
+
+.informationbox {
+    justify-content: center;
+    align-items: center;
+}
+
+.informationbox .information h1 {
+    font-family: "Monument Extended Regular";
+    font-size: 40px;
+    margin-bottom: -25px;
+}
+
+.informationbox .information p {
+    font-size: 40px;
+}
+
+.pathbox {
+    display: flex;
+    border: 3px dashed #643887;
+    width: 902px;
+    height: 231px;
+    justify-content: center;
+    border-radius: 20px;
+}
+
+.pathbox h1 {
+    color: white;
+    background-color: #F4AD0F;
+    padding: 28px 35px;
+    align-self: center;
+    border-radius: 90px;
+    font-family: "Monument Extended Regular";
+}
+
+.pathbox p {
+    font-family: "Monument Extended Regular";
+    color: #643887;
+    font-size: 30px;
+    padding-left: 30px;
+    align-self: center;
+    width: 400px;
+}
+
+.path1 {
+    display: flex;
+}
+
+.path1 img {
+    padding-left: 40px;
+}
+
+.path2 img {
+    padding-right: 40px;
+}
+
+.path2 {
+    display: flex;
+    justify-content: right;
+}
+
+.booksboxsection {
+    display: flex;
+    overflow-x: auto;       /* enables horizontal scrolling */
+    gap: 20px;              /* spacing between category boxes */
+    padding: 10px 0;        /* optional: vertical padding */
+    scroll-behavior: smooth;
+}
+
+  
+  /* Optional: hide scrollbar (still scrollable) */
+  .booksboxsection::-webkit-scrollbar {
+    height: 8px;
+  }
+  .booksboxsection::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+  }
+  
+
+.headingreview {
+    font-family: "Monument Extended Regular";
+    font-size: 36px;
+}
+
+.AllReviewsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding-top: 50px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    height: auto;
+    max-width: 100%;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.ReviewsBox {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-left: 35px;
+}
+
+  
+  @media (min-width: 1025px) and (max-width: 1440px) {
+        .hero1 img{
+            width: 700px;
+        }
+
+        .herotop{
+            background-color: #643887;
+            height: 300px;
+            width: 600px;
+            border-radius: 35px;
+            margin-left: 60px;
+            margin-top: 50px;
+        }
+        
+        .herotop h1,h2{
+            font-family: "Monument Extended Regular";
+            
+        }
+        
+        .herotop{
+            align-content: center;
+            line-height: 20px;
+            color: white;
+        }
+        
+        .herotop h1{
+            font-size: 50px;
+        }
+        
+        .herotop h2{
+            font-size: 30px;
+        }
+        
+        .herobottom{
+            background-color: #F4AD0F;
+            height: 300px;
+            width: 600px;
+            border-radius: 35px;
+            margin-left: 60px;
+            margin-top: 20px;
+            align-content: center;
+        
+        }
+        
+        .herobottom h1{
+            font-size: 70px;
+            font-family: "Monument Extended Regular";
+            color:#643887;
+            padding-left: 40px;
+            
+        }
+        
+        .herobottom button{
+            all: unset;
+            font-size: 15px;
+            background-color: white;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            padding-left: 40px;
+            padding-right: 40px;
+            border-radius: 90px;
+            font-weight: bold;
+            position: absolute;
+            bottom: 90px;
+            right: 70px;
+            transition: 0.3s;
+        }
+        
+        .herobottom button:hover{
+            background-color: #643887;
+            color: white;
+        }
+
+        .ChooseUsSection{
+            margin-top: 40px;
+            width: 1345px;
+            height: 641px;
+            border: 3px solid #643887;
+            border-radius: 35px;
+            border-style: dashed;
+            display: flex;
+        }
+        
+        .ChooseUsSection img{
+            margin-top: -60px;
+        }
+        
+        .point{
+            display: flex;
+        }
+        
+        .pointcircle img{
+            height: 50px;
+        }
+        
+        .point img{
+            height: 50px;
+            margin-top: 8px;
+            background-color: #643887;
+            padding: 10px;
+            border-radius: 20px;
+        }
+        
+        .point .pointtext{
+            padding-left: 25px;
+            line-height: 5px;
+            
+        }
+        
+        .choosepointss{
+            margin-top: 0px;
+        
+        }
+        
+        .chooseinfo h1{
+            font-family: "Monument Extended Regular";
+            padding-top: 40px;
+        }
+        
+        .section3{
+            display: block;
+        }
+        
+        .SectionSmall{
+            width: 1345px;
+            height: 341px;
+            border: 3px solid #643887;
+            border-radius: 35px;
+            border-style: dashed;
+            display: flex;
+            margin-left: 0px;
+        }
+
+        .AllReviewsContainer {
+            display: flex;
+            flex-wrap: wrap; /* Allows items to wrap to the next line */
+            gap: 20px;
+            padding-top: 50px;
+            margin-left: 00px;
+            margin-right: 0px;
+            height: auto; /* Adjust height dynamically */
+            max-width: 100%; /* Ensures it doesn't overflow */
+            justify-content: flex-start; /* Aligns items properly */
+            align-items: flex-start; /* Aligns items from the top */
+            
+            
+        }
+
+        .headingreview{
+            font-family: "Monument Extended Regular";
+            font-size: 36px;
+        }
+        
+        .ReviewsBox {
+            display: flex;
+            justify-content: center; 
+            width: 100%; 
+            margin-left: 0px;
+        }
+  }

@@ -1,0 +1,113 @@
+
+
+body {
+    display: flex;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    position: relative;
+}
+
+.logo {
+    position: absolute;
+    top: 44px;
+    left: 51px;
+}
+
+.logo img {
+    width: 368px;
+    height: 44.29px;
+}
+
+.left {
+    margin-top: 150px;
+    width: 40%;
+    background: #f8f8f8;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h2 {
+    color: #5a2d82;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 10px;
+    color: #5a2d82;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #D9D9D9;
+}
+
+.remember-me {
+    display: flex;
+
+    font-size: 14px;
+    margin-bottom: 20px;
+
+}
+
+.remember-me label{
+    width: 200px;
+}
+
+button {
+    background: #f5b400;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.login-link {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.login-link a {
+    color: #5a2d82;
+    text-decoration: none;
+}
+
+.illustration-section {
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f4f4f4;
+    position: relative;
+}
+
+.illustration-section img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}

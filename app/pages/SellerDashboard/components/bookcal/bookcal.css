@@ -1,0 +1,39 @@
+label {
+    font-size: 20px;
+}
+
+
+
+input{
+    
+    height: 30px;
+    width: 250px;
+    margin-bottom: 20px;
+    border-radius: 45px;
+}
+
+select{
+    height: 35px;
+    width: 250px;
+    margin-bottom: 20px;
+    border-radius: 45px;
+}
+
+.buttoncal button {
+    all: unset;
+    padding: 20px;
+    background-color: #643887;
+    border-radius: 90px;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.buttoncal button:hover{
+    background-color: #F4AD0F;
+}
+
+@media (min-width: 1025px) and (max-width: 1440px) {
+
+
+}

@@ -1,0 +1,36 @@
+.contactContainer {
+    background-color: #D9D9D9;
+    height: 575px;
+    width: 391px;
+    border-radius: 35px;
+    padding: 25px;
+    
+    /* Centering content */
+    display: flex;
+    flex-direction: column; /* Align items vertically */
+    align-items: center; /* Center items horizontally */
+    text-align: center; /* Ensures text aligns in the center */
+    
+}
+
+.contactContainer h3{
+    font-size: 30px;
+}
+
+
+.ContactChatContainer{
+    background-color: #D9D9D9;
+    height: 843px;
+    width: 1400px;
+    border-radius: 35px;
+}
+
+.allchatcontainer{
+    display: flex;
+    gap: 30px;
+}
+
+.chatContainer{
+    width: 1310px;
+    
+}

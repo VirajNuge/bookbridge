@@ -1,0 +1,12 @@
+.dashboard {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .belowdash {
+    display: flex;
+
+  }
+  
+  
+  

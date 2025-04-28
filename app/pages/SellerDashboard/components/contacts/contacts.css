@@ -1,0 +1,40 @@
+a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .contactCardLink {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .contactContainer {
+    background-color: #e5e5e5;
+    height: 60px;
+    width: 275px;
+    border-radius: 90px;
+    gap: 20px;
+    display: flex;
+    align-items: center;
+    color: black;
+    font-family: "Monument Black";
+    margin-bottom: 15px;
+    padding-right: 20px;
+  }
+  
+  .contactContainer img {
+    background-color: #ffffff;
+    height: 40px;
+    width: 40px;
+    border-radius: 120px;
+    margin-left: 20px;
+    object-fit: cover;
+  }
+  
+  .contactName {
+    font-size: 16px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  

@@ -1,0 +1,44 @@
+.reviewscontainerdash{
+    height: max-content;
+    width: 440px;
+    background-color: #643887;
+    padding: 15px;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    border-radius: 20px;
+    display: flex;
+    gap: 10px;
+    font-size: 10px;
+    margin-bottom: 10px;
+}
+
+.reviewtextcontainer{
+
+}
+
+.delbuttondash button{
+    all: unset;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 10px;
+    border-radius: 45px;
+    color: black;
+    background-color: white;
+    transition: 0.3s;
+
+}
+
+.delbuttondash button:hover{
+    background-color: red;
+    color: white;
+}
+
+.starthing {
+    display: flex;
+    align-items: center;
+}
+
+.starthing img{
+    height: 15px;
+}

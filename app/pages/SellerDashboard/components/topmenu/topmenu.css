@@ -1,0 +1,36 @@
+.topmenucontainer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.namecontainer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: auto; /* Pushes this container to the right */
+}
+
+.logotop {
+    height: auto;
+}
+
+.profilePicture img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.topmenunames {
+    line-height: 6px;
+}
+
+.topmenunames h1 {
+    font-size: 20px;
+    font-family: "Monument Extended Regular";
+}
+
+.topmenunames p {
+    font-size: 14px;
+}

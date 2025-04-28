@@ -1,0 +1,234 @@
+.MenuContainer {
+    position: sticky; 
+    top: 10px;
+    background-color: white;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(7px); /* Blurs the background */
+    height: 50px;
+    border-radius: 90px;
+    align-content: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    display: flex;
+}
+
+.MenuContainer .headerlogo {
+    padding-top: 8px;
+    height: 35px;
+}
+
+.MenuContainer .top-nav {
+    padding-left: 550px;
+}
+
+.MenuContainer .top-nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.MenuContainer .top-nav li {
+    padding: 14px 20px;
+}
+
+.MenuContainer .top-nav a {
+    text-decoration: none;
+    color: #000000;
+    font-size: 16px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.MenuContainer .top-nav a:hover {
+    color: #ffcc00;
+}
+
+.MenuContainer .sellbutton {
+    all: unset;
+    background-color: #643887;
+    color: white;
+    margin-top: 7px;
+    margin-bottom: 7px;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-family: "Monument";
+    font-weight: 400;
+    border-radius: 30px;
+    margin-left: 20px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.MenuContainer .sellbutton:hover {
+    background-color: #F4AD0F;
+}
+
+.MenuContainer .chat {
+    height: 40px;
+    margin-top: 6px;
+    padding-left: 20px;
+    margin-bottom: 6px;
+    transition: 0.3s;
+}
+
+.MenuContainer .acc {
+    height: 40px;
+    margin-top: 6px;
+    padding-left: 20px;
+    margin-bottom: 6px;
+    transition: 0.3s;
+}
+
+.MenuContainer .chat:hover {
+    margin-top: 8px;
+    height: 37px;
+    margin-bottom: 8px;
+    margin-left: 1px;
+}
+
+.MenuContainer .acc:hover {
+    margin-top: 8px;
+    height: 37px;
+    margin-bottom: 8px;
+    margin-left: 1px;
+}
+
+/* Menu Toggle Button */
+.MenuContainer .menu-toggle {
+    display: none;
+}
+
+/* Tablet Screens */
+@media (max-width: 1024px) {
+    .MenuContainer {
+        flex-wrap: wrap;
+        height: auto;
+    }
+
+    .MenuContainer .top-nav {
+        display: none;
+    }
+
+    .MenuContainer .top-nav.open {
+        display: block;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: white;
+        width: 100%;
+        z-index: 1;
+        border-radius: 0;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .MenuContainer .top-nav.open ul {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 0;
+    }
+
+    .MenuContainer .top-nav.open li {
+        padding: 10px 0;
+    }
+
+    .MenuContainer .menu-toggle {
+        display: block;
+        background: none;
+        border: none;
+    }
+
+    .MenuContainer .menu-toggle img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .MenuContainer .sellbutton {
+        margin-left: 10px;
+        font-size: 12px;
+    }
+
+    .MenuContainer .chat,
+    .MenuContainer .acc {
+        padding-left: 10px;
+    }
+}
+
+/* Mobile Screens */
+@media (max-width: 768px) {
+    .MenuContainer .top-nav {
+        display: none;
+    }
+
+    .MenuContainer .top-nav.open {
+        display: block;
+        position: absolute;
+        top: 50px;
+        right: 0;
+        background-color: white;
+        width: 100%;
+        border-radius: 0;
+        z-index: 1;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .MenuContainer .top-nav.open ul {
+        display: block;
+        text-align: center;
+        padding: 0;
+    }
+
+    .MenuContainer .top-nav.open li {
+        padding: 10px 0;
+    }
+
+    .MenuContainer .top-nav.open a {
+        font-size: 18px;
+    }
+
+    .MenuContainer .menu-toggle {
+        display: block;
+        background: none;
+        border: none;
+    }
+
+    .MenuContainer .menu-toggle img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .MenuContainer .MenuContainer {
+        justify-content: space-between;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .MenuContainer .sellbutton {
+        margin-left: 10px;
+        font-size: 10px;
+        cursor: pointer;
+    }
+
+    .sellbutton {
+        cursor: pointer;
+    }
+
+    .MenuContainer .chat {
+        padding-left: 5px;
+    }
+
+    .MenuContainer .acc {
+        padding-left: 5px;
+    }
+}
+
+/* 🔧 Fix for Laptops (1366px to 1600px) */
+@media (min-width: 1025px) and (max-width: 1600px) {
+    .MenuContainer .top-nav {
+        padding-left: 200px; /* Adjust this if needed */
+    }
+
+    nav{
+        margin-left: -25px;
+    }
+}

@@ -1,0 +1,83 @@
+.singlecontact {
+    background-color: white;
+    height: 66px;
+    width: 361px;
+    border-radius: 90px;
+    padding-left: 10px;
+    gap: 10px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin-bottom: 10px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .singlecontact img {
+    background-color: #d9d9d9;
+    height: 52px;
+    width: 52px;
+    border-radius: 90px;
+    object-fit: cover;
+  }
+  
+  .contacttext {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    padding: 5px 0;
+  }
+  
+  .toprow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 12px;
+  }
+  
+  .toprow h3 {
+    font-size: 16px;
+    margin: 0;
+  }
+  
+  .time {
+    font-size: 10px;
+    color: gray;
+  }
+  
+  .bottomrow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 12px;
+  }
+  
+  .lastmessage {
+    font-size: 10px;
+    color: #555;
+    margin: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 230px;
+  }
+  
+  .unseen-indicator {
+    height: 10px;
+    width: 10px;
+    background-color: greenyellow;
+    border-radius: 50%;
+  }
+  
+  .online {
+    background-color: greenyellow;
+    height: 10px;
+    width: 10px;
+    border-radius: 90px;
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+  }
+  

@@ -1,0 +1,81 @@
+.userContainer{
+    background-color: white;
+    height: 80px;
+    border-radius: 20px;
+    border: 2px solid #643887;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    padding: 20px;
+}
+
+.approvebuttons {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    
+}
+
+.approvebuttons button{
+    all: unset;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: white;
+    border-radius: 45px;
+    cursor: pointer;
+    transition: 0.3s;
+    color: white;
+    font-size: 20px;
+    
+}
+
+.approvebuttons .right{
+    background-color:#00FF37;   
+}
+
+.approvebuttons .wrong{
+    background-color:#FF0000;
+}
+
+.approvebuttons .right:hover{
+    background-color:#04c82e;
+}
+
+.approvebuttons .wrong:hover{
+    background-color:#be0202;
+}
+
+.buttons{
+    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+.userContainer img{
+    height: 80px;
+    width: 80px;
+}
+
+.userContainer h3{
+    font-family: "Monument Black";
+    font-size: 25px;
+    margin: 0px;
+}
+
+.userContainer .sellerbutton{
+    all: unset;
+    padding: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: #643887;
+    color: white;
+    border-radius: 45px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.userContainer .sellerbutton:hover{
+    background-color: #F4AD0F;
+}

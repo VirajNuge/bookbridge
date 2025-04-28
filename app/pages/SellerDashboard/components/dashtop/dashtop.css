@@ -1,0 +1,41 @@
+
+    .dashtopcontainer{
+        padding: 30px;
+        display: flex;
+        gap: 40px;
+    }
+    
+    
+    .dashelement{
+        display: flex;
+        background-color: white;
+        width: max-content;
+        padding: 20px;
+        border-radius: 30px;
+        gap: 15px;
+        justify-self: center;
+    }
+    
+    .numbercircle {
+        width: 70px;  /* Ensure a square shape */
+        height: 70px; /* Ensure a square shape */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 3px solid #F4AD0F;
+        border-radius: 50%; /* Perfect circle */
+    }
+    
+    
+    .numbercircle h3{
+        color: #F4AD0F;
+        font-family: "Monument Extended Regular";
+        font-size: 15px;
+    }
+    
+    .dashelement h2{
+        font-family: "Monument Extended Regular";
+        font-size: 20px;
+        width: 170px;
+        color: #643887;
+    }

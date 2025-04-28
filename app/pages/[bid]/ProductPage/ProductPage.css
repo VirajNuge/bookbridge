@@ -1,0 +1,188 @@
+.miniproductimages {
+    display: flex;
+    gap: 34px; 
+   margin-top: 20px;
+}
+
+.productinfo{
+    display: flex; 
+}
+
+.producttextcontainer{
+    margin-left: 40px;
+}
+
+.gallery-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .main-image-container {
+    width: 740px;
+    height: 715px;
+    padding: 10px;
+    border-radius: 8px;
+  }
+  .main-image-container img{
+    height: 700px;
+    width: 750px;
+    image-rendering: optimizeQuality;
+  }
+  .main-image {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+  }
+  
+  .thumbnail-container {
+    display: flex;
+    gap: 60px;
+    justify-content: center;
+  }
+  
+  .thumbnail {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    border: 2px solid transparent;
+  }
+  
+  .thumbnail:hover{
+    border-color: #F4AD0F;
+    transform: scale(1.1);
+  }
+  
+.productheading{
+    font-family: "Monument Black";
+    font-size: 30px;
+    margin-bottom: -20px;
+}
+
+.productauthor{
+    font-family: "Monument Extended Regular";
+    font-size: 20px;
+}
+
+.productprice{
+    font-family: "Monument Black";
+    color: #F4AD0F;
+    font-size: 32px;
+}
+
+.chatbutton {
+    all: unset;
+    background-color: #643887;
+    height: 65px;
+    width: 313px;
+    color: white;
+    font-weight: bold;
+    border-radius: 90px;
+    transition: 0.3s;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.chatbutton:hover{
+    background-color: #F4AD0F;
+}
+
+.sellerdetailscontainer{
+    border: 2px solid #643887;
+    padding: 30px;
+    border-radius: 30px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.sellerheading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sellerheading h3{
+    font-family: "Monument Extended Regular";
+    font-size: 25px;
+}
+
+.sellerheading p{
+    font-weight: bold;
+    font-size: 15px;
+    color: #F4AD0F;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.sellerheading p:hover{
+    color: #643887;
+}
+
+.infoprod{
+    line-height: 6px;
+    margin-bottom: 50px;
+    color: blacK;
+}
+
+.infoprod h3{
+    font-family:"Monument Extended Regular";
+    font-size: 25px;
+}
+
+.reportprod{
+    
+}
+
+.prodbuttons{
+    display: flex;
+    margin-bottom: 30px;
+    gap: 20px;
+    align-items: center;
+}
+
+.prodbuttons img{
+    height: 40px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.prodbuttons img:hover,
+.prodbuttons img::selection{
+    filter: invert(100%) hue-rotate(1000deg) brightness(1) ;
+}
+
+.prodheadings{
+    font-family: "Monument Black";
+    color: #643887;
+    font-size: 36px;
+    margin-bottom: -10px;
+}
+
+.prodtags {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.prodtags h3{
+    color: #643887;
+}
+
+.prodtags p{
+    background-color: #D9D9D9;
+    padding: 10px;
+    border-radius: 45px;
+}
+
+.booksboxsection {
+    display: flex;
+    gap: 20px;
+  }

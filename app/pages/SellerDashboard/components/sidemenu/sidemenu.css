@@ -1,0 +1,92 @@
+body{
+    background-color: white;
+}
+
+.sidemenucontainer {
+    padding: 20px;
+    height: 600px;
+    width: 350px;
+    border-radius: 37px;
+    background-color: #F6F6F6;
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center; /* Centers content vertically */
+    align-items: center;
+    gap: 20px; /* Adds space between buttons */
+}
+
+.sidemenucontainer button{
+    height: 100px;
+    width: 300px;
+    border-radius: 40px;
+    background-color: #643887;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Ensures content is centered */
+    border: none;
+    font-family: "Monumentt";
+    font-weight: bold;
+    font-size: 16px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.sidemenucontainer button:hover{
+    background-color: #F4AD0F;
+}
+
+.sidemenucontainer img{
+    height: 30px;
+    padding-right: 10px;
+}
+
+.sidemenucontainer a{
+    text-decoration: none;
+}
+
+@media (min-width: 1025px) and (max-width: 1440px) {
+
+    .sidemenucontainer {
+        padding: 20px;
+        height: 600px;
+        width: 350px;
+        border-radius: 37px;
+        background-color: #F6F6F6;
+        display: flex;
+        flex-direction: column; /* Stack items vertically */
+        justify-content: center; /* Centers content vertically */
+        align-items: center;
+        gap: 20px; /* Adds space between buttons */
+    }
+    
+    .sidemenucontainer button{
+        height: 100px;
+        width: 240px;
+        border-radius: 40px;
+        background-color: #643887;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center; /* Ensures content is centered */
+        border: none;
+        font-family: "Monumentt";
+        font-weight: bold;
+        font-size: 16px;
+        transition: 0.3s;
+        cursor: pointer;
+    }
+    
+    .sidemenucontainer button:hover{
+        background-color: #F4AD0F;
+    }
+    
+    .sidemenucontainer img{
+        height: 30px;
+        padding-right: 10px;
+    }
+    
+    .sidemenucontainer a{
+        text-decoration: none;
+    }
+}

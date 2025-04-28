@@ -1,0 +1,184 @@
+.chat-container {
+    background-color: #D9D9D9;
+    width: 100%;
+    max-width: 1400px;
+    height: 590px;
+    border-radius: 35px;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+}
+
+.chat-image {
+    max-width: 300px;
+    max-height: 300px;
+    border-radius: 8px;
+    margin-top: 6px;
+  }
+  
+
+/* Chat Header */
+.chat-header {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    height: 30px;
+    background-color: white;
+    border-radius: 90px;
+    padding: 15px;
+}
+
+/* Profile Picture */
+.chat-profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+/* Chat Messages Section */
+.chat-messages {
+    flex: 1; /* Allows it to take full available space */
+    overflow-y: auto; /* Enables scrolling when messages overflow */
+    padding: 5px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+/* Upload Button Styles */
+.upload-button {
+    margin-left: 10px;
+    padding: 13px 16px;
+    background-color: #643887;
+    color: white;
+    border: none;
+    border-radius: 45px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .upload-button img{
+    height: 20px;
+  }
+  
+  .upload-button:hover {
+    background-color: #F4AD0F;
+  }
+
+  .reply-preview-inside {
+    font-size: 12px;
+    background-color: #ececec;
+    padding: 4px 8px;
+    border-left: 3px solid #888;
+    margin-bottom: 5px;
+    border-radius: 6px;
+    color: #555;
+  }
+
+  .reply-preview-box {
+    background-color: #f4f4f4;
+    padding: 8px 12px;
+    border-left: 4px solid #643887;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    font-size: 13px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #333;
+  }
+  
+  .reply-preview-box button {
+    background: none;
+    border: none;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #999;
+    margin-left: 10px;
+  }
+  .message:hover {
+    cursor: pointer;
+    background-color: #f0f0f0;
+  }
+    
+  
+  /* Hide native file input */
+  .upload-button input[type="file"] {
+    display: none;
+  }
+  
+
+/* Message Styling */
+.message {
+    padding: 8px;
+    border-radius: 10px;
+    margin-bottom: 8px;
+    max-width: 70%;
+    word-wrap: break-word;
+}
+
+/* Align sent messages to the right */
+.sent {
+    background-color: #dcf8c6;
+    align-self: flex-end; /* Moves sent messages to the right */
+    text-align: right;
+}
+
+/* Align received messages to the left */
+.received {
+    background-color: #f1f1f1;
+    align-self: flex-start; /* Keeps received messages on the left */
+}
+
+/* Chat Input Box (Sticks to Bottom) */
+.chat-input {
+    display: flex;
+    align-items: center;
+    border-top: 1px solid #ddd;
+    padding: 15px;
+    background-color: white;
+    border-radius: 35px;
+    position: sticky;
+    bottom: 0;
+}
+
+/* Input Field */
+.chat-input input {
+    flex: 1;
+
+    height: 39px;
+    border: 1px solid #ccc;
+    border-radius: 45px;
+    outline: none;
+    border: none;
+}
+
+/* Send Button */
+.chat-input button {
+    margin-left: 10px;
+    padding: 15px 20px;
+    background-color: #643887;
+    color: white;
+    border: none;
+    border-radius: 45px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* Button Hover Effect */
+.chat-input button:hover {
+    background-color: #F4AD0F;
+}
+
+/* If no chat is selected */
+.no-chat-selected {
+    text-align: center;
+    color: gray;
+    margin-top: 20px;
+}

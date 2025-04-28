@@ -1,0 +1,262 @@
+.FooterContainer{
+    margin-top: 40px;
+    background-color: #643887;
+    height: 493px;
+    border-radius: 35px;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.logoo{
+    background-color: white;
+    border-radius: 90px;
+    padding-left: 30px;
+    padding-right: 40px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.BookInfo .about{
+    font-size:medium;
+    width: 416px;
+    color: white;
+}
+
+.BookInfo .contactf{a.FooterContainer {
+    margin-top: 40px;
+    background-color: #643887;
+    border-radius: 35px;
+    padding: 30px 50px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+/* Logo */
+.logoo {
+    background-color: white;
+    border-radius: 90px;
+    padding: 10px 30px;
+    max-width: 200px;
+}
+
+/* Book Info Section */
+.BookInfo {
+    flex: 1;
+    min-width: 300px;
+    max-width: 400px;
+}
+
+.BookInfo .about,
+.BookInfo .contactf {
+    font-size: 0.95rem;
+    color: white;
+}
+
+.BookInfo .contactf {
+    margin-top: 20px;
+    line-height: 1.8;
+}
+
+.BookInfo .reserve {
+    margin-top: 20px;
+    color: white;
+    font-size: 0.8rem;
+    opacity: 50%;
+}
+
+/* Quick Links Section */
+.Links {
+    flex: 1;
+    min-width: 200px;
+    max-width: 250px;
+    font-family: "Monument Regular", sans-serif;
+}
+
+.Links h5 {
+    font-size: 1rem;
+    color: #F4AD0F;
+}
+
+.Links li {
+    line-height: 2.2;
+}
+
+.Links li a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Social Media Section */
+.SocialMedia {
+    flex: 1;
+    min-width: 250px;
+    max-width: 300px;
+    background-color: #542479;
+    border-radius: 25px;
+    padding: 20px;
+    text-align: center;
+    color: white;
+    font-family: "Monument Extended Regular", sans-serif;
+}
+
+.SocialMedia h1 {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+.iconsfooter {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.iconsfooter img {
+    height: 32px;
+    filter: invert(1);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+    .FooterContainer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .SocialMedia {
+        width: 100%;
+    }
+}
+
+    padding-top: 20px;
+    font-size:medium;
+    line-height: 40px;
+    color: white;
+    width: 450px;
+}
+
+.BookInfo .reserve{
+    padding-top: 20px;
+    color: white;
+    font-size: small;
+    opacity: 50%;
+}
+
+.Links{
+    font-family: "Monument Regular";
+    margin-left: 150px;
+
+    font-size: 15;
+
+}
+
+.Links h1{
+    font-size: 10px;
+}
+
+.Links li{
+    line-height: 35px;
+    color: white;
+}
+.Links li a{
+    color: white;
+}
+
+.SocialMedia{
+    background-color: #542479;
+    height: 379px;
+    width: 600px;
+    border-radius: 35px;
+    margin-left: 160px;
+    margin-right: 40px;
+    font-family: "Monument Extended Regular";
+    align-content: center;
+    color: white;
+    line-height: 20px;
+}
+.iconsfooter{
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.iconsfooter img{
+    height: 40px;
+    filter: invert(1);
+    
+}
+
+@media (max-width: 768px){
+    .FooterContainer{
+        display: block;
+        width: 500px;
+        height: 1225px;
+    }
+    .Links{
+        margin-left: 0px;
+    
+    }
+    .SocialMedia{
+        margin-left: 0px;
+        width: 500px;
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1440px) {
+    .FooterContainer {
+      padding: 40px 60px;
+      gap: 40px;
+      height: auto;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+    }
+  
+    .BookInfo {
+      max-width: 360px;
+    }
+  
+    .BookInfo .about,
+    .BookInfo .contactf {
+      font-size: 1rem;
+      width: 100%;
+    }
+  
+    .BookInfo .reserve {
+      font-size: 0.85rem;
+    }
+  
+    .Links {
+      margin-left: 80px;
+      max-width: 200px;
+      font-size: 0.95rem;
+    }
+  
+    .Links h5 {
+      font-size: 1rem;
+      margin-bottom: 10px;
+    }
+  
+    .Links li {
+      line-height: 2.2;
+    }
+  
+    .SocialMedia {
+      width: 400px;
+      height: 400px;
+      padding: 20px;
+      margin-left:-100px;
+    }
+  
+    .SocialMedia h1 {
+      font-size: 1.2rem;
+      margin: 10px 0;
+    }
+  
+    .iconsfooter img {
+      height: 30px;
+    }
+  }
+  

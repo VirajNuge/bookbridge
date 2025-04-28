@@ -1,0 +1,112 @@
+.maincontainer{
+    display: flex;
+    gap: 30px;
+}
+
+.tempcontainer {
+    height: 860px; /* Adjust height as needed */
+    width: 1800px;
+    overflow-y: auto; /* Enables vertical scrolling */
+    display: flex;
+    flex-direction: column; /* Ensures listings are stacked */
+    gap: 10px; /* Space between listings */
+    padding-right: 10px; /* Adds padding for better scrolling */
+    background-color: #F6F6F6;
+    padding: 30px;
+    border-radius: 35px;
+}
+
+/* Optional: Add a scrollbar style */
+.tempcontainer::-webkit-scrollbar {
+    width: 8px;
+}
+
+.tempcontainer::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 10px;
+}
+
+.tempcontainer::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
+
+
+  .moderator-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .moderator-form label {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  .moderator-form input,
+  .moderator-form select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .submit-btn {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #643887;
+    color: white;
+    border: none;
+    border-radius: 90px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .submit-btn:hover {
+    background-color: #3e195c;
+  }
+  
+  /* Moderators List */
+  .moderators-container {
+    margin: 40px auto;
+    padding: 20px;
+    max-width: 1500px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .moderators-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+  
+  .moderators-table th,
+  .moderators-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .moderators-table th {
+    background-color: #F4AD0F;
+    color: white;
+  }
+  
+  .moderators-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .remove-btn {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 90px;
+    cursor: pointer;
+  }
+  
+  .remove-btn:hover {
+    background-color: #c82333;
+  }
+  
