@@ -77,10 +77,7 @@ const AdminLoginPage = () => {
             onChange={(e) => setPassword(e.target.value)}
             required
           />
-          <div className="remember-me">
-            <input type="checkbox" id="remember" />
-            <label htmlFor="remember">Remember Me</label>
-          </div>
+          
           <button className="login-btn" type="submit">
             Login
           </button>

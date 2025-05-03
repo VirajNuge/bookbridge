@@ -5,7 +5,6 @@
 
 .tempcontainer {
     height: 860px; /* Adjust height as needed */
-    width: 1800px;
     overflow-y: auto; /* Enables vertical scrolling */
     display: flex;
     flex-direction: column; /* Ensures listings are stacked */

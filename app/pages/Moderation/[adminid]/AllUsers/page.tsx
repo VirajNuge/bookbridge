@@ -101,8 +101,9 @@ const Page = () => {
   };
 
   return (
-    <>
+    <><div className="turntothenextline">
       <TopMenu />
+      <br />
       <div className="maincontainer">
         <SideMenu />
         <div className="tempcontainer">
@@ -120,6 +121,7 @@ const Page = () => {
             />
           ))}
         </div>
+      </div>
       </div>
     </>
   );

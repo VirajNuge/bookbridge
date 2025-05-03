@@ -1,6 +1,7 @@
 .userContainer{
     background-color: white;
     height: 80px;
+    width: 950px;
     border-radius: 20px;
     border: 2px solid #643887;
     display: flex;
