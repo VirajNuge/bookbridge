@@ -10,6 +10,7 @@ import {
   getDocs,
 } from "firebase/firestore";
 import { db } from "../../../../firebase-config/firebase-config";
+
 import "./SellerPage.css";
 import Header from "../../../../components/header/header";
 import Footer from "../../../../components/footer/footer";
@@ -19,30 +20,45 @@ import Review from "../../../../components/review/review";
 import BookBox from "../../../../components/bookbox/bookbox";
 import ReviewModal from "../../../../components/ReviewModal/ReviewModal";
 
+type ReviewItem = {
+  id: string;
+  review: string;
+  rating: number;
+  name: string;
+  type: string;
+};
+
+type BookItem = {
+  id: string;
+  image: string;
+  heading: string;
+  price: string;
+  sellerUid: string;
+  author: string;
+  condition: string;
+};
+
 const SellerPage = () => {
   const { uid } = useParams();
   const router = useRouter();
   const [sellerData, setSellerData] = useState<any>(null);
   const [loading, setLoading] = useState(true);
   const [isReviewModalOpen, setReviewModalOpen] = useState(false);
-  const [reviews, setReviews] = useState([]);
-  const sellerId = uid ?? "";
-  const [books, setBooks] = useState<any[]>([]);
-  const [averageRating, setAverageRating] = useState("0.00");
+  const [reviews, setReviews] = useState<ReviewItem[]>([]);
+  const [books, setBooks] = useState<BookItem[]>([]);
+  const [averageRating, setAverageRating] = useState<number>(0);
+
+  const sellerId = typeof uid === "string" ? uid : uid?.[0] || "";
 
   // ✅ Fetch Seller Data
   useEffect(() => {
-    if (uid) {
+    if (sellerId) {
       const fetchSellerData = async () => {
-        console.log("Fetching seller data for UID:", uid);
         try {
-          const docRef = doc(db, "users", uid);
+          const docRef = doc(db, "users", sellerId);
           const docSnap = await getDoc(docRef);
           if (docSnap.exists()) {
-            console.log("Seller data:", docSnap.data());
             setSellerData(docSnap.data());
-          } else {
-            console.log("No seller found with this UID!");
           }
         } catch (error) {
           console.error("Error fetching seller data:", error);
@@ -53,56 +69,38 @@ const SellerPage = () => {
 
       fetchSellerData();
     }
-  }, [uid]);
+  }, [sellerId]);
 
-  // ✅ Fetch Seller Reviews & Calculate Average Rating
+  // ✅ Fetch Reviews & Calculate Average Rating
   useEffect(() => {
-    if (uid) {
+    if (sellerId) {
       const fetchReviews = async () => {
         try {
-          console.log("Fetching reviews for seller UID:", uid);
-
           const q = query(
             collection(db, "reviews"),
-            where("sellerId", "==", uid)
+            where("sellerId", "==", sellerId)
           );
           const querySnapshot = await getDocs(q);
 
-          console.log("Query Snapshot Size (Reviews):", querySnapshot.size);
-
-          if (querySnapshot.empty) {
-            console.warn("No reviews found for this seller.");
-            setReviews([]);
-            setAverageRating("0.00");
-            return;
-          }
-
           let totalRating = 0;
-          let reviewCount = 0;
-
-          const reviewsData = querySnapshot.docs.map((doc) => {
-            const reviewData = doc.data();
-            const rating = reviewData.stars || 0; // ✅ Use `stars` instead of `rating`
-
+          const reviewsData: ReviewItem[] = querySnapshot.docs.map((doc) => {
+            const data = doc.data();
+            const rating = data.stars || 0;
             totalRating += rating;
-            reviewCount += 1;
-
             return {
               id: doc.id,
-              review: reviewData.review,
-              rating: rating, // ✅ Use `stars` here
-              name: reviewData.userName || "Anonymous",
-              type: new Date(reviewData.timestamp?.toDate()).toLocaleString(),
+              review: data.review,
+              rating,
+              name: data.userName || "Anonymous",
+              type: new Date(data.timestamp?.toDate()).toLocaleString(),
             };
           });
 
-          console.log("Fetched Reviews:", reviewsData);
-
-          // ✅ Calculate the average rating using `stars`
-          const avgRating =
-            reviewCount > 0 ? (totalRating / reviewCount).toFixed(2) : "0.00";
-          setAverageRating(avgRating);
-
+          setAverageRating(
+            reviewsData.length > 0
+              ? parseFloat((totalRating / reviewsData.length).toFixed(2))
+              : 0
+          );
           setReviews(reviewsData);
         } catch (error) {
           console.error("Error fetching reviews:", error);
@@ -111,36 +109,29 @@ const SellerPage = () => {
 
       fetchReviews();
     }
-  }, [uid]);
+  }, [sellerId]);
 
   // ✅ Fetch Books Listed by Seller
   useEffect(() => {
-    if (uid) {
+    if (sellerId) {
       const fetchBooks = async () => {
         try {
-          console.log("Fetching books for seller UID:", uid);
-
-          const q = query(collection(db, "books"), where("uid", "==", uid));
+          const q = query(collection(db, "books"), where("uid", "==", sellerId));
           const querySnapshot = await getDocs(q);
-          console.log("Query Snapshot Size:", querySnapshot.size);
 
-          if (querySnapshot.empty) {
-            console.warn("No books found for this seller.");
-          } else {
-            querySnapshot.docs.forEach((doc) =>
-              console.log("Book Found:", doc.id, doc.data())
-            );
-          }
+          const booksData: BookItem[] = querySnapshot.docs.map((doc) => {
+            const data = doc.data();
+            return {
+              id: data.bid,
+              image: data.uploadedImages?.[0] || "/default-book.jpg",
+              heading: data.book || "Untitled",
+              price: data.price || "N/A",
+              sellerUid: data.uid,
+              author: data.author || "Unknown",
+              condition: data.condition || "Good",
+            };
+          });
 
-          const booksData = querySnapshot.docs.map((doc) => ({
-            id: doc.data().bid, // ✅ Fetch `bid` instead of Firestore `doc.id`
-            image: doc.data().uploadedImages?.[0] || "/default-book.jpg",
-            heading: doc.data().book || "Unknown Book",
-            price: doc.data().price || "Not Available",
-            sellerUid: doc.data().uid,
-          }));
-
-          console.log("Fetched Books:", booksData);
           setBooks(booksData);
         } catch (error) {
           console.error("Error fetching books:", error);
@@ -149,20 +140,17 @@ const SellerPage = () => {
 
       fetchBooks();
     }
-  }, [uid]);
+  }, [sellerId]);
 
   return (
     <>
       <Header />
-      <br />
       {!loading && sellerData ? (
         <>
           <TopHeader
             pp={sellerData.profilepicture || "/default-profile.png"}
-            sellerName={`${sellerData.fname || "Unknown"} ${
-              sellerData.lname || ""
-            }`}
-            rating={averageRating} // ✅ Use calculated average rating
+            sellerName={`${sellerData.fname || "Unknown"} ${sellerData.lname || ""}`}
+            rating={averageRating}
             location={sellerData.location || "Not provided"}
             joinDate={
               sellerData.joindata
@@ -173,11 +161,10 @@ const SellerPage = () => {
             status={sellerData.Status || "Member"}
           />
 
-          <br />
           <SellerStatus
             sales={1200}
             responseRate="98%"
-            rating={averageRating} // ✅ Use calculated average rating
+            rating={averageRating}
             listings={books.length}
             aboutMe={sellerData.aboutme || "No description available."}
           />
@@ -186,16 +173,13 @@ const SellerPage = () => {
         <p>Loading seller details...</p>
       )}
 
-      <br />
       <div>
         <div className="reviewheading">
           <h1 className="name">
-            <div style={{ color: "#643887" }}>SELLER'S </div>
+            <div style={{ color: "#643887" }}>SELLER'S&nbsp;</div>
             <div style={{ color: "#F4AD0F" }}>REVIEWS</div>
           </h1>
-          <button onClick={() => setReviewModalOpen(true)}>
-            Review Seller
-          </button>
+          <button onClick={() => setReviewModalOpen(true)}>Review Seller</button>
         </div>
 
         {isReviewModalOpen && (
@@ -222,7 +206,7 @@ const SellerPage = () => {
       </div>
 
       <section>
-        <h1 style={{ display: "flex" }} className="name">
+        <h1 className="name" style={{ display: "flex" }}>
           <div style={{ color: "#643887" }}>FEATURED&nbsp;</div>
           <div style={{ color: "#F4AD0F" }}>LISTING</div>
         </h1>
@@ -234,13 +218,9 @@ const SellerPage = () => {
                 image={book.image}
                 heading={book.heading}
                 price={book.price}
-                onClick={() => {
-                  console.log(
-                    "Navigating to:",
-                    `/pages/${book.id}/ProductPage`
-                  );
-                  router.push(`/pages/${book.id}/ProductPage`);
-                }}
+                author={book.author}
+                condition={book.condition}
+                onClick={() => router.push(`/pages/${book.id}/ProductPage`)}
               />
             ))
           ) : (

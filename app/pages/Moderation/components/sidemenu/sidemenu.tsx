@@ -21,7 +21,7 @@ const SideMenu = () => {
     }
   }, []);
 
-  const handleNavigation = (page) => {
+  const handleNavigation = (page: string) => {
     if (!adminid) return;
     setLoading(true);
     setTimeout(() => {

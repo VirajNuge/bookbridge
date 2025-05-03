@@ -28,15 +28,14 @@ const CalculateBookWorth = () => {
 
     // Condition depreciation (Cover, Look, Binding)
     const conditionDepreciation = {
-      cover: { Excellent: 0, Good: 0.1, Fair: 0.25, Poor: 0.5 }[coverCondition],
-      look: { Excellent: 0, Good: 0.1, Fair: 0.25, Poor: 0.5 }[lookCondition],
-      binding: { Intact: 0, Loose: 0.15, Damaged: 0.3 }[bindingCondition],
+      cover: { Excellent: 0, Good: 0.1, Fair: 0.25, Poor: 0.5 }[coverCondition] ?? 0,
+      look: { Excellent: 0, Good: 0.1, Fair: 0.25, Poor: 0.5 }[lookCondition] ?? 0,
+      binding: { Intact: 0, Loose: 0.15, Damaged: 0.3 }[bindingCondition] ?? 0,
     };
-
-    // Highlighting depreciation
-    const highlightingDepreciation = { None: 0, Minor: 0.1, Significant: 0.25 }[
-      highlighting
-    ];
+    
+    const highlightingDepreciation =
+      { None: 0, Minor: 0.1, Significant: 0.25 }[highlighting] ?? 0;
+    
 
     // Calculate the worth
     const adjustedPrice =

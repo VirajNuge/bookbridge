@@ -12,24 +12,40 @@ import {
   cloudinaryUploadUrl,
   uploadPreset,
 } from "../../../../cloudinary-config/cloudinary-config";
+
 import TopMenu from "../../components/topmenu/topmenu";
 import SideTopMenu from "../../components/sidemenu/sidemenu";
 
 import "./settings.css";
 
+// ✅ Define profile type
+type ProfileData = {
+  profilepicture: string;
+  fname: string;
+  lname: string;
+  email: string;
+  joindata: string;
+  contact: string;
+  location: string;
+  username: string;
+  aboutme: string;
+};
+
+const defaultProfile: ProfileData = {
+  profilepicture: "",
+  fname: "",
+  lname: "",
+  email: "",
+  joindata: "",
+  contact: "",
+  location: "",
+  username: "",
+  aboutme: "",
+};
+
 const UserSettings: React.FC = () => {
   const [user, setUser] = useState<User | null>(null);
-  const [profileData, setProfileData] = useState({
-    profilepicture: "",
-    fname: "",
-    lname: "",
-    email: "",
-    joindata: "",
-    contact: "",
-    location: "",
-    username: "",
-    aboutme: "",
-  });
+  const [profileData, setProfileData] = useState<ProfileData>(defaultProfile);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
@@ -37,12 +53,29 @@ const UserSettings: React.FC = () => {
         window.location.href = "/login";
       } else {
         setUser(currentUser);
-        const userDoc = await getDoc(doc(db, "users", currentUser.uid));
-        if (userDoc.exists()) {
-          setProfileData(userDoc.data());
+        try {
+          const userDoc = await getDoc(doc(db, "users", currentUser.uid));
+          if (userDoc.exists()) {
+            const data = userDoc.data();
+            // Use fallback values to satisfy typing
+            setProfileData({
+              profilepicture: data.profilepicture || "",
+              fname: data.fname || "",
+              lname: data.lname || "",
+              email: data.email || "",
+              joindata: data.joindata || "",
+              contact: data.contact || "",
+              location: data.location || "",
+              username: data.username || "",
+              aboutme: data.aboutme || "",
+            });
+          }
+        } catch (err) {
+          console.error("Error fetching profile:", err);
         }
       }
     });
+
     return () => unsubscribe();
   }, []);
 
@@ -70,9 +103,7 @@ const UserSettings: React.FC = () => {
       window.location.href = "/";
     } catch (error) {
       console.error("Error deleting profile:", error);
-      alert(
-        "Failed to delete profile. Please check your credentials and try again."
-      );
+      alert("Failed to delete profile. Please check your credentials and try again.");
     }
   };
 
@@ -90,13 +121,20 @@ const UserSettings: React.FC = () => {
     formData.append("file", file);
     formData.append("upload_preset", uploadPreset);
 
-    const response = await fetch(cloudinaryUploadUrl, {
-      method: "POST",
-      body: formData,
-    });
-    const data = await response.json();
-    if (data.secure_url) {
-      setProfileData((prev) => ({ ...prev, profilepicture: data.secure_url }));
+    try {
+      const response = await fetch(cloudinaryUploadUrl, {
+        method: "POST",
+        body: formData,
+      });
+      const data = await response.json();
+      if (data.secure_url) {
+        setProfileData((prev) => ({
+          ...prev,
+          profilepicture: data.secure_url,
+        }));
+      }
+    } catch (error) {
+      console.error("Image upload failed:", error);
     }
   };
 
@@ -162,7 +200,7 @@ const UserSettings: React.FC = () => {
             <label>Join Date</label>
             <input
               type="text"
-              name="joindate"
+              name="joindata"
               value={profileData.joindata}
               readOnly
             />
@@ -202,7 +240,9 @@ const UserSettings: React.FC = () => {
             <button
               type="button"
               className="seller-btn"
-              onClick={() => (window.location.href = `/pages/seller/${user?.uid}/SellerPage`)}
+              onClick={() =>
+                (window.location.href = `/pages/seller/${user?.uid}/SellerPage`)
+              }
             >
               View Seller Page
             </button>

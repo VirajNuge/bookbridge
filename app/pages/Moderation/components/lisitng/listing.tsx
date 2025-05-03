@@ -1,4 +1,4 @@
-"use client";
+ "use client";
 import React from "react";
 import "./listing.css";
 
@@ -11,7 +11,8 @@ interface ListingProps {
   onApprove: () => void;
   onReject: () => void;
   sellerUid: string; // ✅ Seller's UID needed for navigation
-  bid: string; // ✅ Book ID for Product Page
+  bid: string | boolean;
+ // ✅ Book ID for Product Page
 }
 
 const Listing: React.FC<ListingProps> = ({
