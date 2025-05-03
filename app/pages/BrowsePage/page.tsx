@@ -9,7 +9,6 @@ import { collection, getDocs } from "firebase/firestore";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 
-
 interface Book {
   id: string;
   bid: string;
@@ -25,46 +24,29 @@ interface Book {
   pagescount: number;
   tags: string[];
   uploadedImages: string[];
-  createdAt: string; // added field for creation timestamp
-  moderationStatus: string; // added field for moderation status
+  createdAt: string;
+  moderationStatus: string;
 }
 
-const BrowsePage: React.FC = () => {
+const BrowsePageContent: React.FC = () => {
   const [books, setBooks] = useState<Book[]>([]);
   const [filteredBooks, setFilteredBooks] = useState<Book[]>([]);
-  const [loading, setLoading] = useState(true); // ✅ Added loading state
+  const [loading, setLoading] = useState(true);
   const [category, setCategory] = useState("");
   const [author, setAuthor] = useState("");
   const [minPrice, setMinPrice] = useState("");
   const [maxPrice, setMaxPrice] = useState("");
   const [condition, setCondition] = useState("");
   const [sortOrder, setSortOrder] = useState("");
-  const [wishlist, setWishlist] = useState<Book[]>([]);
   const [searchTerm, setSearchTerm] = useState("");
 
-  const handleSearch = () => {
-    if (searchTerm.trim() === "") {
-      setFilteredBooks(books); // Show all if empty
-      return;
-    }
-
-    const searchResults = books.filter((book) => {
-      const lowerSearch = searchTerm.toLowerCase();
-      return (
-        book.book.toLowerCase().includes(lowerSearch) ||
-        book.author.toLowerCase().includes(lowerSearch)
-      );
-    });
-
-    setFilteredBooks(searchResults);
-  };
-
   const searchParams = useSearchParams();
+
   useEffect(() => {
     const categoryFromURL = searchParams.get("category") || "";
     setCategory(categoryFromURL);
   }, [searchParams]);
-  
+
   useEffect(() => {
     const fetchBooks = async () => {
       try {
@@ -75,14 +57,13 @@ const BrowsePage: React.FC = () => {
           ...doc.data(),
         })) as Book[];
 
-        // Filter books where the moderationStatus is 'approved'
         const approvedBooks = bookList.filter(
           (book) => book.moderationStatus === "approved"
         );
 
         setBooks(approvedBooks);
         setFilteredBooks(approvedBooks);
-        setLoading(false); // ✅ Stop loading after fetching data
+        setLoading(false);
       } catch (error) {
         console.error("Error fetching books:", error);
         setLoading(false);
@@ -92,24 +73,36 @@ const BrowsePage: React.FC = () => {
     fetchBooks();
   }, []);
 
+  const handleSearch = () => {
+    if (searchTerm.trim() === "") {
+      setFilteredBooks(books);
+      return;
+    }
+
+    const lowerSearch = searchTerm.toLowerCase();
+    const searchResults = books.filter(
+      (book) =>
+        book.book.toLowerCase().includes(lowerSearch) ||
+        book.author.toLowerCase().includes(lowerSearch)
+    );
+
+    setFilteredBooks(searchResults);
+  };
+
   const handleFilter = () => {
     let updatedBooks = books.filter((book) => {
       return (
-        (category === "" ||
-          book.category.toLowerCase().includes(category.toLowerCase())) &&
-        (author === "" ||
-          book.author.toLowerCase().includes(author.toLowerCase())) &&
-        (condition === "" ||
-          book.condition.toLowerCase() === condition.toLowerCase()) &&
+        (category === "" || book.category.toLowerCase().includes(category.toLowerCase())) &&
+        (author === "" || book.author.toLowerCase().includes(author.toLowerCase())) &&
+        (condition === "" || book.condition.toLowerCase() === condition.toLowerCase()) &&
         (minPrice === "" || book.price >= parseInt(minPrice)) &&
         (maxPrice === "" || book.price <= parseInt(maxPrice))
       );
     });
 
-    // Sort books by creation date, newest first
-    updatedBooks.sort(
-      (a, b) =>
-        new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
+    // Sort by created date first
+    updatedBooks.sort((a, b) =>
+      new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
     );
 
     if (sortOrder === "lowToHigh") {
@@ -136,17 +129,13 @@ const BrowsePage: React.FC = () => {
             />
             <button onClick={handleSearch}>SEARCH</button>
           </div>
-        </div></center>
+        </div>
+      </center>
+
       <div className="browsepagecontainer">
-        {/* Filter Options */}
-
         <div className="fliteroptions">
-
           <label>SELECT CATEGORY</label>
-          <select
-            value={category}
-            onChange={(e) => setCategory(e.target.value)}
-          >
+          <select value={category} onChange={(e) => setCategory(e.target.value)}>
             <option value="">All Categories</option>
             <option value="Fiction">Fiction</option>
             <option value="Non-Fiction">Non-Fiction</option>
@@ -164,14 +153,8 @@ const BrowsePage: React.FC = () => {
             <option value="Poetry">Poetry</option>
           </select>
 
-
-
           <label>SELECT AUTHOR</label>
-          <input
-            type="text"
-            value={author}
-            onChange={(e) => setAuthor(e.target.value)}
-          />
+          <input value={author} onChange={(e) => setAuthor(e.target.value)} />
 
           <label>SELECT PRICE RANGE</label>
           <input
@@ -191,23 +174,18 @@ const BrowsePage: React.FC = () => {
 
           <label>SORT BY PRICE</label>
           <br />
-          <select
-            value={sortOrder}
-            onChange={(e) => setSortOrder(e.target.value)}
-          >
+          <select value={sortOrder} onChange={(e) => setSortOrder(e.target.value)}>
             <option value="">Default</option>
             <option value="lowToHigh">Price: Low to High</option>
             <option value="highToLow">Price: High to Low</option>
           </select>
-          <br />
 
+          <br />
           <button onClick={handleFilter}>FILTER</button>
         </div>
 
-
-        {/* Display Books */}
         <div className="bookscontainer">
-          {loading ? ( // ✅ Show loading state
+          {loading ? (
             <p>Loading books...</p>
           ) : filteredBooks.length > 0 ? (
             filteredBooks.map((book) => (
@@ -222,6 +200,7 @@ const BrowsePage: React.FC = () => {
                     price={`Rs.${book.price}/=`}
                     author={book.author}
                     condition={book.condition}
+                    onClick={() => {}} // required prop fallback
                   />
                 </Link>
               </div>
@@ -231,10 +210,9 @@ const BrowsePage: React.FC = () => {
           )}
         </div>
       </div>
-
       <Footer />
     </div>
   );
 };
 
-export default BrowsePage;
+export default BrowsePageContent;
